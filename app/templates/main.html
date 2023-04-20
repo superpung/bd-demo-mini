@@ -1,0 +1,198 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>标题</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href='{{ url_for("static",filename="css/service/index.css") }}' />
+    <link rel="stylesheet" href='{{ url_for("static",filename="css/service/reset.css") }}' />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src='{{ url_for("static",filename="js/require.js") }}'></script>
+    <script src='{{ url_for("static",filename="js/config.js") }}'></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='{{ url_for("static",filename="js/service/service.js") }}'></script>
+    <script src='{{ url_for("static",filename="js/service/algo.js") }}'></script>
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu>.dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -6px;
+            margin-left: -1px;
+            -webkit-border-radius: 0 6px 6px 6px;
+            -moz-border-radius: 0 6px 6px;
+            border-radius: 0 6px 6px 6px;
+        }
+
+        .dropdown-submenu:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu>a:after {
+            display: block;
+            content: " ";
+            float: right;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #ccc;
+            margin-top: 5px;
+            margin-right: -10px;
+        }
+
+        .dropdown-submenu:hover>a:after {
+            border-left-color: #fff;
+        }
+
+        .dropdown-submenu.pull-left {
+            float: none;
+        }
+
+        .dropdown-submenu.pull-left>.dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles-js" class="main">
+        <div class="main_con">
+            <div class="main_top">
+                <div class="main_top_middle">
+                    <div class="main_top_middle_top_title">
+                        <img class="title_bg" src='{{ url_for("static",filename="picture/service/title_bg.png") }}' />
+                        标题
+                        <a class="title_web" href='{{ url_for("service.service") }}' onclick="">返回首页</a>
+                        <a class="title_admin" href='{{ url_for("service.service") }}' onclick="">返回首页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="main_middle">
+                <div class="main_bottom_top">
+                    <div class="main_bottom_b_middle1">
+                        <img src='{{ url_for("static",filename="picture/service/main_bootm_middle.png") }}' />
+                        <div class="main_bottom_b_title">
+                            <div class="btn-group cus_btn">
+                                <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"
+                                    style="width: 100%">
+                                    选择数据集<span class="caret"></span></button>
+                                <input type="file" name="file" id="upload" style="display: none">
+                                <ul class="dropdown-menu" id="choose_dataset">
+                                    <li><a href="#" name="picture">图片</a></li>
+                                    <li><a href="#" name="video">视频</a></li>
+                                    <li><a href="#" name="audio">音频</a></li>
+                                    <li><a href="#" name="text">文本</a></li>
+                                    <li><a href="#" name="network">网络</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3 style="text-align: center;color: white" id="dataset_title"></h3>
+                        <div id="contentId" class="main_bottom_b_con main_bottom_b_con2" style="color: white; overflow:auto"></div>
+                    </div>
+                    <div class="main_bottom_b_middle2">
+                        <img src='{{ url_for("static",filename="picture/service/main_bootm_middle.png") }}' />
+                        <div class="main_bottom_b_title row" style="margin: 5px;">
+                            <div class="btn-group col-md-2">
+                                <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"
+                                    style="width: 100%">算法分类1<span class="caret"></span></button>
+                                <ul class="dropdown-menu" id="algoT1">
+                                    <li class="dropdown-submenu"><a tabindex="-1" href="#">节点中心性指标</a>
+                                        <ul tabindex="-1" class="dropdown-menu">
+                                            <li><a tabindex="-1" href="#" id="2" title="网络中节点的度中心性">度中心性</a>
+                                            </li>
+                                            <li><a tabindex="-1" href="#" id="3" title="网络中节点的紧密度中心性">紧密度中心性</a>
+                                            </li>
+                                            <li><a tabindex="-1" href="#" id="4" title="网络中节点的介数中心性">介数中心性</a>
+                                            </li>
+                                            <li><a tabindex="-1" href="#" id="5" title="网络中边的介数中心性">边介数中心性</a>
+                                            </li>
+                                            <li><a tabindex="-1" href="#" id="6" title="网络中的流紧密中心性">流紧密度中心性</a>
+                                            </li>
+                                            <li><a tabindex="-1" href="#" id="7" title="网络中的流介数中心性">流介数中心性</a>
+                                            </li>
+                                            <li><a tabindex="-1" href="#" id="8" title="网络中的特征向量中心性">特征向量中心性</a>
+                                            </li>
+                                            <li><a tabindex="-1" href="#" id="9" title="网络中的特征向量中心性">特征向量中心性</a>
+                                            </li>
+                                            <li><a tabindex="-1" href="#" id="10" title="网络中的加载中心性">加载中心性</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu"><a tabindex="-1" href="#">链接预测</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" id="11" title="计算未连边的节点之间有边的概率">resourceAllocationIndex</a>
+                                            </li>
+                                            <li><a href="#" id="12"
+                                                    title="对网络中的节点之间有无边进行预测，即概率的计算">jaccardCoefficient</a>
+                                            </li>
+                                            <li><a href="#" id="13"
+                                                    title="通过 Adamic-Adar index算法进行链接预测">adamicAdarIndex</a>
+                                            </li>
+                                            <li><a href="#" id="14" title="通过偏好连接方法对节点进行评分">preferentialAttachment</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-submenu"><a tabindex="-1" href="#">社团检测</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#" id="15"
+                                                    title="利用异步的fluid社团检测方法对社团进行划分，该算法需要提前指定社团个数">asyFluidc</a>
+                                            </li>
+                                            <li><a href="#" id="16" title="利用异步标签传播算法对网络进行社团划分">asynLpaCommunities</a>
+                                            </li>
+                                            <li><a href="#" id="17">labelPropagation</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="network2" class="main_bottom_b_con3" style="color: white;overflow:auto"></div>
+                    </div>
+                </div>
+                <div class="main_bottom_bottom">
+                    <div class="main_bottom_top_list">
+                        <img src='{{ url_for("static",filename="picture/service/main_bottopm_top1.png") }}' />
+                        <div class="main_bottom_t_l_title">算法介绍</div>
+                        <div class="main_bottom_t_l_con">
+                            <div id="algoIntro" class="test"></div>
+                        </div>
+                    </div>
+                    <div class="main_bottom_top_list">
+                        <img src='{{ url_for("static",filename="picture/service/main_bottopm_top1.png") }}' />
+                        <div class="main_bottom_t_l_title">算法运行结果</div>
+                        <div class="main_bottom_t_l_con">
+                            <div id="algoRes" class="test">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_bottom">
+                <div class="main_middle_list">
+                    <img src='{{ url_for("static",filename="picture/service/main_middle.png") }}' />
+                    <div class="main_list_title main_list_title"></div>
+                    <span id="time" class="main_list_title_num main_list_title_num"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src='{{ url_for("static",filename="js/service/dataScoll.js") }}'></script>
+<script src='{{ url_for("static",filename="js/service/digitalScroll.js") }}'></script>
+<script src='{{ url_for("static",filename="js/service/jcarousellite.js") }}'></script>
+<script src='{{ url_for("static",filename="js/service/particles.min.js") }}'></script>
+<script src='{{ url_for("static",filename="js/service/app.js") }}'></script>

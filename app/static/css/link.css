@@ -1,0 +1,58 @@
+.jey {  
+    text-align: center;
+    background-color: #cf4646;
+    color: #fff;
+    margin-bottom: 30px;
+    padding: 0px;
+    width: 100%;
+    height: 150px;
+    position:relative;
+  }
+.container_projects{width:100%;height:768px;margin:0px auto;}
+.con_left{width:39%;height:80%;float:left;border:1px solid #000;margin-left: 5px;}
+.con_middle{width:20%;height:100%;float:left;margin:0 px;}
+body{ text-align:center} 
+.row1{ margin:5 auto;}
+.caption{height:80px;}
+.con_right{width:39%;height:80%;float:left;border:1px solid #000;}
+body{margin: 0;padding: 0;}
+h1{margin: 0;padding: 0;}
+html{margin: 0;padding: 0;}
+.return{
+    float:left;background-color: #cf4646;border:0px;color: #fff;text-decoration:none;font-size:20px
+}
+.bigtitle{
+    font-size:50px;
+    margin:auto;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left: -100px;
+    margin-top:-40px;
+}
+#network{
+    width:100%;
+    height:600px;
+}
+#network1{
+    width:600px;
+    height:600px;   
+}
+.undraggable_loginbtn{
+    margin-bottom:50px;
+    width:100%;
+}
+#loginor{
+    width:100%;
+    height:100%;
+}
+#button1{
+    margin-top: 50px;
+    font-size:30px;
+    background-color:#6495ED;
+}
+#button2{
+    margin-top: 70px;
+    font-size:30px;
+    background-color:#6495ED;
+}

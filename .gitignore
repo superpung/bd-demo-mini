@@ -1,0 +1,15 @@
+*pyc
+app/*pyc
+app/auth/*pyc
+app/bio/*pyc
+app/main/*pyc
+app/paper/*pyc
+manage*
+log
+*.log
+.idea/
+nohup.out
+temp/*
+temp
+.idea/*
+__pycache__

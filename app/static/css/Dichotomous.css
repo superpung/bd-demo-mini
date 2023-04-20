@@ -1,0 +1,40 @@
+.jumbotron {
+    text-align: center;
+    background-color: #cf4646;
+    color: #fff;
+    margin-top: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 150px;
+    position:relative;
+}
+a{
+    float:left;
+    background-color: #cf4646;
+    border:0px;
+    color: #fff;
+    text-decoration:none;
+    font-size:20px
+}
+.title{   
+    font-size:50px;
+    margin:auto;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left: -100px;
+    margin-top:-40px;
+}
+.con_middle{width:70%;height:100%;float:left;margin:0 px;}
+.con_right{width:29%;height:80%;float:left;}
+.container_projects{width:100%;height:768px;margin:0px auto;}
+#network{
+    float: left;
+    width:100%;
+    height:75%;
+}  
+#nework1{
+    width:100%;
+    height:600px;
+}  
+*{margin: 0;padding: 0;}
