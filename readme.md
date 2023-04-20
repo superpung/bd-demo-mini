@@ -17,13 +17,15 @@
 4. 在浏览器中打开：http://localhost:8000/
 
 > **Note**
+>
 > 注意 `requirements.txt` 需要根据自己的项目修改。
 
 > **Warning**
+>
 > 如果报错，请检查 `requirements.txt` 中的版本信息，可以尝试：
 > ```
->   flask-socketio==4.3.2
->   Werkzeug==2.0.1
+> flask-socketio==4.3.2
+> Werkzeug==2.0.1
 > ```
 
 ## 自定义
